@@ -14,6 +14,10 @@ O desafio é composto por três partes:
 
 - Acesse a imagem do modelo conceitual em [`questao1/modelo_banco.png`](questao1/modelo_banco.png).
 ### Modelo Conceitual
-
 - Link público do diagrama no BrModelo:  
   [Clique aqui!](https://app.brmodeloweb.com/#!/publicview/68bc20e90ec1bb87cf05d)
+
+## Índices básicos
+- **Chaves Primárias (PKs)**: Criar indices nas colunas `id` das tabelas **Benchmark**, **Controle** e **Histórico_estado**. Esses indices permitem localizar registo específico com mais rapizes, conforme o cenário Q1 e Q3.
+- **Chaves Estrangeiras (FKs)**: Criar indices nas colunas `id_benchmark` da tabela **Controle** e `id_controle` na tabela **Historico_Estado**. Esses indices ajuda a acelerar as operações de junção (`JOIN`) entre as tabelas.
+- **Coluna de Data/Hora**: Criar indice na coluna `date` na tabela **Historico_Estado**, para otimizar as buscas por um intervalo de tempo, conforme o cenário Q2 ou encontrar o estado mais cerente de um controle conforme o cenário Q3
