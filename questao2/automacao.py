@@ -71,20 +71,20 @@ with open(log_to_file, 'w') as f:
     f.write(f'Relatório de Cópia - backupsTo.log\n')
     f.write('-' * 40 + '\n')
 
-for filename in os.listdir(source_dir):
-    file_path = os.path.join(source_dir, filename)
-    file_creation_time = os.path.getctime(file_path)
+    for filename in os.listdir(source_dir):
+        file_path = os.path.join(source_dir, filename)
+        file_creation_time = os.path.getctime(file_path)
 
-    if(current_time - file_creation_time) <= days_limit:
-        try:
-            shutil.copy2(file_path, dest_dir)
-            log_entry = f'Arquivo {filename} copiado com sucesso.\n'
-            f.write(log_entry)
-            print(log_entry.strip())
-        except Exception as e:
-            log_entry = f'Erro ao copiar o arquivo {filename}: {e}\n'
-            f.write(log_entry)
-            print(log_entry.strip())
+        if(current_time - file_creation_time) <= days_limit:
+            try:
+                shutil.copy2(file_path, dest_dir)
+                log_entry = f'Arquivo {filename} copiado com sucesso.\n'
+                f.write(log_entry)
+                print(log_entry.strip())
+            except Exception as e:
+                log_entry = f'Erro ao copiar o arquivo {filename}: {e}\n'
+                f.write(log_entry)
+                print(log_entry.strip())
 
 print(f'Relatório de cópia salvo em "{log_to_file}" com sucesso.')
        
