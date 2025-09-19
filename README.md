@@ -1,4 +1,4 @@
-# Desafio Back-End Volcann — Processo Seletivo
+# Desafio Back-End Valcann — Processo Seletivo
 Este repositório contem soluções do desafio proposto pela Valcann para vaga de estágio em Back-End.
 
 ## Resumo do Desafio
